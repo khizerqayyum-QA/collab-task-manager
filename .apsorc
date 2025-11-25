@@ -1,0 +1,99 @@
+{
+  "entities": [
+    {
+      "name": "Project",
+      "created_at": false,
+      "updated_at": false,
+      "fields": [
+        {
+          "name": "name",
+          "type": "varchar",
+          "nullable": false,
+          "isIndex": false,
+          "isUnique": false
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "nullable": true,
+          "isIndex": false,
+          "isUnique": false
+        }
+      ],
+      "indexes": [],
+      "uniques": []
+    },
+    {
+      "name": "Task",
+      "created_at": false,
+      "updated_at": false,
+      "fields": [
+        {
+          "name": "title",
+          "type": "varchar",
+          "nullable": false,
+          "isIndex": false,
+          "isUnique": false
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "nullable": true,
+          "isIndex": false,
+          "isUnique": false
+        },
+        {
+          "name": "status",
+          "type": "varchar",
+          "nullable": false,
+          "isIndex": false,
+          "isUnique": false
+        }
+      ],
+      "indexes": [],
+      "uniques": []
+    },
+    {
+      "name": "Comment",
+      "created_at": false,
+      "updated_at": false,
+      "fields": [
+        {
+          "name": "content",
+          "type": "text",
+          "nullable": false,
+          "isIndex": false,
+          "isUnique": false
+        }
+      ],
+      "indexes": [],
+      "uniques": []
+    },
+    {
+      "name": "Assignment",
+      "created_at": false,
+      "updated_at": false,
+      "fields": [],
+      "indexes": [],
+      "uniques": []
+    }
+  ],
+  "relationships": [
+    {
+      "from": "Project",
+      "to": "Task",
+      "type": "OneToMany"
+    },
+    {
+      "from": "Task",
+      "to": "Comment",
+      "type": "OneToMany"
+    },
+    {
+      "from": "Task",
+      "to": "Assignment",
+      "type": "OneToMany"
+    }
+  ],
+  "_removedEntities": []
+}
